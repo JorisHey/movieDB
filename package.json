@@ -1,0 +1,36 @@
+{
+  "name": "movieDB_fullStackProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js --ignore /client ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-livereload-plugin": "^2.2.0"
+  },
+  "dependencies": {
+    "babel-node": "0.0.1-security",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
