@@ -1,6 +1,6 @@
 # movieDB
 
--- Full Stack React project; Nexios IT --
+## -- Full Stack React project; Nexios IT --
 
 Resources to get started with:
 
