@@ -43,7 +43,8 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'client/index.html'
+      template: 'client/index.html',
+      favicon: './favicon.ico'
     }),
     new LiveReloadPlugin()
   ]
