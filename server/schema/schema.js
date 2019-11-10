@@ -17,6 +17,19 @@ const NewMoviesType = new GraphQLObjectType({
   }
 });
 
+const MovieSearchType = new GraphQLObjectType({
+  name: 'MovieSearch',
+  fields: {
+    poster_path: { type: GraphQLString },
+    overview: { type: GraphQLString },
+    release_date: { type: GraphQLString },
+    id: { type: GraphQLInt },
+    title: { type: GraphQLString },
+    popularity: { type: GraphQLFloat },
+    vote_average: { type: GraphQLFloat }
+  }
+});
+
 const ProductionCompaniesType = new GraphQLObjectType({
   name: 'ProductionCompanies',
   fields: {
@@ -94,6 +107,21 @@ const RootQuery = new GraphQLObjectType({
             movie.poster_path =
               'https://image.tmdb.org/t/p/w500' + movie.poster_path;
             return movie;
+          });
+      }
+    },
+    searchMovie: {
+      type: new GraphQLList(MovieSearchType),
+      args: { title: { type: GraphQLString } },
+      resolve(parent, args) {
+        return axios
+          .get(
+            `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=nl-NL&query=${args.title}&page=1&include_adult=false
+          `
+          )
+          .then(res => {
+            console.log(res);
+            return res.data.results;
           });
       }
     }
